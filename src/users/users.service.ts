@@ -29,7 +29,7 @@ export class UsersService {
         _id: id,
       },
       {
-        $slot: updateUserDto,
+        $set: updateUserDto,
       },
       {
         new: true,
@@ -41,5 +41,6 @@ export class UsersService {
     return this.userModel.deleteOne({
       _id: id
     })
+    .exec();
   }
 }
